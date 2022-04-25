@@ -1,38 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Montserrat", sans-serif;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  justify-content: center;
+}
+
+.board {
+  width: 30rem;
+  height: 30rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #44d6e145;
+}
+
+.square {
+  border: 1px solid rgba(2, 7, 247, 0.8);
+  padding: 20px;
+  color: rgb(26, 25, 25);
+  font-size: 33px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.square:first-child,
+.square:nth-child(4),
+.square:nth-child(7) {
+  border-left: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square:last-child,
+.square:nth-child(3),
+.square:nth-child(6) {
+  border-right: none;
+}
+
+.square:nth-child(7),
+.square:nth-child(8),
+.square:last-child {
+  border-bottom: none;
+}
+
+.square:nth-child(2),
+.square:nth-child(3),
+.square:first-child {
+  border-top: none;
+}
+
+h6 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.square:hover {
+  transition: 0.2s all ease-in-out;
+  background-color: rgb(129, 245, 245);
 }
